@@ -19,7 +19,7 @@ namespace v0806
 
         int vx = -1;
         int vy = -1;
-        int zettai = Math.Abs(-2);
+        int zettai = Math.Abs(-1);
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Left += vx;
