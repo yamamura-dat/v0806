@@ -22,6 +22,12 @@ namespace v0806
         int zettai = Math.Abs(-1);
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Point mp = MousePosition;
+            mp = PointToClient(mp);
+            label2.Text = "" + mp.X + "," + mp.Y;
+            label2.Left = mp.X;
+            label2.Top = mp.Y;
+
             label1.Left += vx;
             label1.Top += vy;
 
@@ -47,6 +53,11 @@ namespace v0806
         {
             //MessageBox.Show("幅" + ClientSize.Width);
             //MessageBox.Show("高さ" + ClientSize.Height);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
