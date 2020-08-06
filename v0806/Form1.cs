@@ -17,12 +17,35 @@ namespace v0806
             InitializeComponent();
         }
 
-        int vx = -10;
-        int vy = -10;
+        int vx = -1;
+        int vy = -1;
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Left += vx;
             label1.Top += vy;
+
+            if(label1.Left<0)
+            {
+                vx = 1;
+            }
+            if(label1.Top<0)
+            {
+                vy = 1;
+            }
+            if (label1.Right > ClientSize.Width)
+            {
+                vx = -1;
+            }
+            if (label1.Bottom > ClientSize.Height)
+            {
+                vy = -1;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show("幅" + ClientSize.Width);
+            //MessageBox.Show("高さ" + ClientSize.Height);
         }
     }
 }
