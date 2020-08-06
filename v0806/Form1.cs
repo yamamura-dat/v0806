@@ -19,6 +19,7 @@ namespace v0806
 
         int vx = -1;
         int vy = -1;
+        int zettai = Math.Abs(-2);
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Left += vx;
@@ -26,19 +27,19 @@ namespace v0806
 
             if(label1.Left<0)
             {
-                vx = 1;
+                vx = Math.Abs(vx);
             }
             if(label1.Top<0)
             {
-                vy = 1;
+                vy = Math.Abs(vy);
             }
             if (label1.Right > ClientSize.Width)
             {
-                vx = -1;
+                vx = -Math.Abs(vx);
             }
             if (label1.Bottom > ClientSize.Height)
             {
-                vy = -1;
+                vy = -Math.Abs(vy);
             }
         }
 
